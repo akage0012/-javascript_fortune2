@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+main {
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  min-width: 300px;
+  margin: 0 20px;
+}
+
+#drawButton {
+  font-size: 1.3rem;
+  padding: 12px 30px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+#drawButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  background: #000;
+}
+
+#drawButton:active {
+  transform: translateY(0);
+}
+
+#resultDisplay {
+  font-size: 1.5rem;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 15px;
+  background: #EEE;
+  border: 2px solid #e9ecef;
+}
+
+footer {
+  position: fixed;
+  bottom: 20px;
+  font-size: 0.9rem;
+}
+
+/* おみくじ結果に応じた背景色とスタイル */
+.daikichi {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e) !important;
+  color: white;
+  border-color: #ff4757;
+}
+
+.chukichi {
+  background: linear-gradient(135deg, #ffa726, #ffb74d) !important;
+  color: white;
+  border-color: #ff9800;
+  /* 中吉の画像の大きさを制御 */
+.chukichi img {
+    max-width: 200px; /* お好みの大きさに変更してください */
+    width: 100%;
+    height: auto;
+}
+}
+
+.kichi {
+  background: linear-gradient(135deg, #66bb6a, #81c784) !important;
+  color: white;
+  border-color: #4caf50;
+}
+
+/* bodyの背景色変更 */
+body.daikichi {
+  background: linear-gradient(135deg, #ffe0e0, #fff5f5);
+  transition: background 0.5s ease;
+}
+
+body.chukichi {
+  background: linear-gradient(135deg, #fff3e0, #fffbf0);
+  transition: background 0.5s ease;
+}
+
+body.kichi {
+  background: linear-gradient(135deg, #e8f5e8, #f1f8f1);
+  transition: background 0.5s ease;
+}
+
+/* bodyクラスに基づいたresultDisplayのスタイル */
+body.daikichi #resultDisplay {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e) !important;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-color: #ff4757;
+}
+
+body.chukichi #resultDisplay {
+  background: linear-gradient(135deg, #ffa726, #ffb74d) !important;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-color: #ff9800;
+}
+
+body.kichi #resultDisplay {
+  background: linear-gradient(135deg, #66bb6a, #81c784) !important;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-color: #4caf50;
+}
+
+@media (min-width: 601px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  main {
+    margin: 0;
+    padding: 3rem;
+  }
+  
+  #drawButton {
+    font-size: 1.5rem;
+    padding: 15px 40px;
+  }
+  
+  #resultDisplay {
+    font-size: 2rem;
+  }
+}
